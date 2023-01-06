@@ -58,12 +58,12 @@ system.file.template() {
     # so let's get rendering
     # I think we have to assume that variables have been set?
 
-    /usr/bin/mo ${_variables:+-s=$_variables} $_template | $__babashka_sudo diff $_file_name -
+    ${__babashka_bin}/mo ${_variables:+-s=$_variables} $_template | $__babashka_sudo diff $_file_name -
   }
   function meet() {
 
     # Overwrite the file
-    /usr/bin/mo ${_variables:+-s=$_variables} $_template | $__babashka_sudo tee $_file_name
+    ${__babashka_bin}/mo ${_variables:+-s=$_variables} $_template | $__babashka_sudo tee $_file_name
     # Change these settings, if needed
     [[ $_mode != "" ]] && $__babashka_sudo chmod $_mode $_file_name
     [[ $_owner != "" ]] && $__babashka_sudo chown $_owner $_file_name

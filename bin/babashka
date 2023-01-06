@@ -3,6 +3,9 @@
 __babashka_trace=no
 __babashka_output_stream=/dev/null
 
+# A StackOverflow Special
+__babashka_bin=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
 __babashka_usage() {
     echo "usage: babashka [-v] [-s] [-f] [-x] <dep name>" >&2
     echo "  -s : use sudo if required"               >&2
