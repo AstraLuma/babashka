@@ -4,6 +4,8 @@ on:
   push:
   release:
     types: [published]
+  schedule:
+    - cron: '37 23 * * 0'
 
 jobs:
   container:
